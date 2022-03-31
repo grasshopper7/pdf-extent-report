@@ -29,18 +29,12 @@
 		<!-- custom javascript -->
 
 
-		<scripts>
+		<js>
 
-<![CDATA[
-$(document).ready(function() {
-	alert("Hello");
-});
-]]>
-		</scripts>
+		</js>
 		<!-- custom styles -->
-		<styles>
-<![CDATA[
-]]>
-		</styles>
+		<css>
+
+		</css>
 	</configuration>
 </extentreports>

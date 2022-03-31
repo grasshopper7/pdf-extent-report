@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -16,7 +17,7 @@ public class TESTMarkupReport {
 	public static void main(String[] args) throws IOException {
 
 		ExtentReports extent = new ExtentReports();
-		// extent.setMediaResolverPath(new String[] { "images" });
+		extent.setMediaResolverPath(new String[] { "images" });
 
 		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/TESTMarkupPDFReport.pdf");
 		extent.attachReporter(pdf);
@@ -73,6 +74,14 @@ public class TESTMarkupReport {
 				.pass(MarkupHelper.createCodeBlock(XML_CODE, CodeLanguage.XML));
 
 		extent.createTest("Code Blocks").skip(MarkupHelper.createCodeBlock(XML_CODE, JSON_CODE, XML_CODE));
+
+		extent.createTest("Generted JSON Code Block")
+				.generateLog(Status.INFO, MarkupHelper.createCodeBlock(JSON_CODE, CodeLanguage.JSON)).createNode("GCB")
+				.generateLog(Status.INFO, MarkupHelper.createCodeBlock(JSON_CODE, CodeLanguage.JSON));
+
+		extent.createTest("Other medias").createNode("Test Media")
+				.pass(MediaEntityBuilder.createScreenCaptureFromPath("logo.png").build())
+				.pass(MediaEntityBuilder.createScreenCaptureFromPath("json.json").build());
 
 		extent.flush();
 	}

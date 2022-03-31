@@ -1,5 +1,6 @@
 package tech.grasshopper.reporter;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,9 +29,9 @@ public class BDDReport {
 
 		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/BDDPDFReport.pdf");
 		extent.attachReporter(pdf);
-		// pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
+		//pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
 		// pdf.loadXMLConfig(new File("src/test/resources/pdf-config.xml"));
-		
+
 		// pdf.config().setMediaFolders(new String[] { "images", "reports/images" });
 
 		ExtentSparkReporter spark = new ExtentSparkReporter("reports/BDDSparkReport.html");

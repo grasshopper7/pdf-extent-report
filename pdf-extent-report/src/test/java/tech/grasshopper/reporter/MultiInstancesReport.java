@@ -17,7 +17,7 @@ public class MultiInstancesReport {
 
 		ExtentPDFReporter pdf1 = new ExtentPDFReporter("reports/many/MultiplePDFReport1.pdf");
 		extent.attachReporter(pdf1);
-		pdf1.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
+		//pdf1.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
 
 		ExtentPDFReporter pdf2 = new ExtentPDFReporter("reports/many/MultiplePDFReport2.pdf");
 		extent.attachReporter(pdf2);
