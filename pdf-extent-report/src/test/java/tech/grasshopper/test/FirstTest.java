@@ -7,7 +7,6 @@ public class FirstTest extends Base {
 	@Test
 	public void testOne() {
 		System.out.println("Test One 11");
-		System.out.println(extent);
 		extent.createTest("Log Levels", "Specify all log levels").pass("pass").fail("fail").skip("skip").warning("warn")
 				.info("info").assignCategory("Category").assignAuthor("Author").assignDevice("Device");
 	}

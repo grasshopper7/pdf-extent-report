@@ -18,8 +18,6 @@ public class Base {
 
 		extent = new ExtentReports();
 
-		System.out.println(extent);
-
 		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/SuiteReport.pdf");
 		ExtentSparkReporter spark = new ExtentSparkReporter("reports/SuiteReport.html");
 		extent.attachReporter(spark, pdf);
