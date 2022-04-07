@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tech.grasshopper</groupId>
 	<artifactId>pdf-extent-report</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 
 	<properties>
 		<project.reporting.outputEncoding>UTF-8
@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
 
-		<pdf.extent.reporter.version>1.2.0</pdf.extent.reporter.version>
+		<pdf.extent.reporter.version>1.2.1</pdf.extent.reporter.version>
 		<extent.version>5.0.9</extent.version>
 	</properties>
 
