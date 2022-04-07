@@ -1,26 +1,26 @@
-package tech.grasshopper.test;
+package tech.grasshopper.reporter;
 
-import org.testng.annotations.Test;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class FirstTest extends Base {
+public class LongTestNameDescReport {
 
-	@Test
-	public void testOne() {
-		System.out.println("Test One 11");
+	public static void main(String[] args) {
+
+		ExtentReports extent = new ExtentReports();
+
+		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/LongTextPDFReport.pdf");
+		extent.attachReporter(pdf);
+
+		ExtentSparkReporter spark = new ExtentSparkReporter("reports/LongTextSparkReport.html");
+		extent.attachReporter(spark);
+
 		extent.createTest(
 				"Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels Log Levels",
 				"Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levelsSpecify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levelsSpecify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levelsSpecify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels Specify all log levels ")
 				.pass("pass").fail("fail").skip("skip").warning("warn").info("info").assignCategory("Category")
 				.assignAuthor("Author").assignDevice("Device");
-	}
 
-	@Test
-	public void testTwo() {
-		System.out.println("Test Two 11");
-		extent.createTest("Test Heirarchy").pass("passing test").createNode(
-				"Child Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Testhild Test Child Test Child TestChild TestChild Test Child TestChild TestChild TestChild Test",
-				"Child Test description").pass("child pass test").createNode("Grand Child Test")
-				.pass("grand child pass test");
-
+		extent.flush();
 	}
 }
