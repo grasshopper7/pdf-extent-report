@@ -1,5 +1,6 @@
 package tech.grasshopper.reporter;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -21,7 +22,7 @@ public class TESTMarkupReport {
 
 		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/TESTMarkupPDFReport.pdf");
 		extent.attachReporter(pdf);
-		// pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
+		pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
 
 		ExtentSparkReporter spark = new ExtentSparkReporter("reports/TESTMarkupSparkReport.html");
 		extent.attachReporter(spark);

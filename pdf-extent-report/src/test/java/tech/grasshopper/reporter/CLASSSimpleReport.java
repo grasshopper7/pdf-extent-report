@@ -1,5 +1,6 @@
 package tech.grasshopper.reporter;
 
+import java.io.File;
 import java.io.IOException;
 
 import com.aventstack.extentreports.AnalysisStrategy;
@@ -18,7 +19,7 @@ public class CLASSSimpleReport {
 
 		ExtentPDFReporter pdf = new ExtentPDFReporter("reports/CLASSSimplePDFReport.pdf");
 		extent.attachReporter(pdf);
-		// pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
+		pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
 
 		ExtentSparkReporter spark = new ExtentSparkReporter("reports/CLASSSimpleSparkReport.html");
 		extent.attachReporter(spark);
@@ -50,6 +51,8 @@ public class CLASSSimpleReport {
 				.warning("This is a combination with log.");
 
 		extent.createTest("Screen Capture").createNode("Test Media").addScreenCaptureFromPath("dashboard_default.png")
+				.addScreenCaptureFromPath("json.json").addScreenCaptureFromPath("dashboard_default.png")
+				.addScreenCaptureFromPath("dashboard_config.png").addScreenCaptureFromPath("dashboard_default.png")
 				.addScreenCaptureFromPath("dashboard_config.png").createNode("Log Media")
 				.pass(MediaEntityBuilder.createScreenCaptureFromPath("logo.png").build());
 
